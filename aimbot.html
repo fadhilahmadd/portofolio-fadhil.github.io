@@ -1,0 +1,356 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<title>Fadhil Ahmad Hidayat Project</title>
+	<meta charset="utf-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<link rel="stylesheet" href="assets/css/main.css" />
+</head>
+
+<body class="right-sidebar is-preload">
+	<div id="page-wrapper">
+
+		<!-- Header -->
+		<section id="header">
+
+			<!-- Logo -->
+			<h1><a href="aimbot.html">Fadhil Ahmad Hidayat - CSGO Aimbot YOLOv3</a></h1>
+
+			<!-- Nav -->
+			<nav id="nav">
+				<ul>
+					<li><a href="index.html">Home</a></li>
+					<li>
+						<a href="index.html">Projek</a>
+						<ul>
+							<li><a href="deteksi-merokok.html">Deteksi Merokok Realtime</a></li>
+							<li><a href="aimbot.html">CSGO Aimbot YOLOv3</a></li>
+							<li>
+								<a href="#">Website</a>
+								<ul>
+									<li><a href="bank-sampah.html">Bank Sampah</a></li>
+									<li><a href="ecom-vape.html">E-Commerce VapeStore</a></li>
+									<li><a href="stok-vape.html">Stok Barang Vape</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="current"><a href="aimbot.html">CSGO Aimbot YOLOv3</a></li>
+				</ul>
+			</nav>
+
+		</section>
+
+		<!-- Main -->
+		<section id="main">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 col-12-medium">
+
+						<!-- Content -->
+						<article class="box post">
+							<a href="#" class="image featured"><img src="images/cs.jpg" alt="" /></a>
+							<header>
+								<h2>CSGO Aimbot YOLOv3</h2>
+								<p>Aimbot yang memungkinkan player menembak musuh secara otomatis.</p>
+							</header>
+							<p>
+								Pada projek ini saya membuat Aimbot yaitu player memungkinkan untuk menembak musuh
+								secara otomatis, tepat
+								dan akurat pada game CSGO. Deteksi menggunakan YOLOv3 Darknet yang ringan sehingga dapat
+								digunakan dengan ringan saat
+								game sedang dimainkan yang dimana sama-sama membutuhkan GPU. Pada deteksi mendapatkan
+								kisaran 31 FPS sehingga tidak
+								terlalu delay dengan game.
+							</p>
+							<section>
+								<header>
+									<h3>Algoritma Objek Deteksi</h3>
+								</header>
+								<p>
+									Algoritma Objek Deteksi merupakan salah satu algoritma computer vision yang
+									berfungsi untuk menentukan di mana lokasi objek pada suatu citra berada dengan
+									bounding box, sekaligus mengklasifikasikan objek tersebut ke dalam sebuah kelas yang
+									telah ditentukan. Metric yang paling cocok dan sering digunakan untuk mengukur
+									kemampuan algoritma deteksi objek adalah Mean Average-Precission (mAP). Terdapat
+									berbagai macam jenis arsitektur object detection algorithm, seiring waktu, CNN telah
+									menjadi arsitektur dasar yang paling sering digunakan karena keunggulanannya dalam
+									melakukan deteksi objek pada suatu citra
+								</p>
+							</section>
+							<section>
+								<header>
+									<h3>You Only Look Once (YOLO)</h3>
+								</header>
+								<p>
+									YOLO merupakan salah satu state-of-the-art object detection algorithm yang membagi
+									citra masukan ke dalam suatu grid berukuran SxS. Ukuran dari grid cell tersebut
+									tergantung pada input size yang digunakan pada suatu arsitektur. Pada YOLOv3, jika
+									input size 416x416, maka ukuran grid size adalah 13x13, 26x26, dan 52x52. Setiap sel
+									bertugas untuk memprediksi objek yang ada di dalam sel tersebut dengan bounding box
+									beserta confidence yang merupakan nilai probabilitas keberadaan suatu objek pada
+									bounding box tersebut. Kemudian, setelah bounding box dipetakan berdasarkan nilai
+									confidence yang dihasilkan, YOLO akan memprediksi kelas dari objek yang terdapat
+									pada bounding box tersebut beserta probabilitasnya, sehingga terbentuklah class
+									probability map. Dari sekian banyak bounding box yang dihasilkan, untuk mendapatkan
+									bounding box beserta kelas objek dengan probabilitas yang tinggi, maka dari seluruh
+									hasil prediksi tersebut, hanya yang melampaui threshold saja yang akan digunakan.
+									Jika terdapat duplikasi bounding box, maka Non-max Suppresion (NMS) berperan untuk
+									menghilangkan duplikat tersebut. Gambar 1 merupakan ilustrasi dari cara kerja YOLO.
+								</p>
+								<p><img src="images/ilustrasi yolo.jpg" alt=""
+										style="max-inline-size: 100%; block-size: auto;">
+									Pada YOLOv3, feature extractor yang sebelumnya menggunakan Darknet-19 menjadi
+									Darknet-53, dan juga proses deteksi objek yang kini menggunakan 3 skala di mana pada
+									setiap skala menggunakan 3 anchor boxes sehingga berdampak pada meningkatnya
+									kemampuan mendeteksi objek yang lebih kecil.
+								</p>
+								<header>
+									<h3>OpenCV DNN dengan CUDA</h3>
+								</header>
+								<p>
+									OpenCV DNN Module hanya mendukung inferensi Deep Learning pada gambar dan vidio
+									saja, tidak mendukung Tuning dan Train Data. OpenCV DNN sangat dioptimalkan untuk
+									prosessor Intel. Kita bisa mendapatkan Frame Per Second (FPS) yang baik saat
+									menjalankan inferensi pada vidio Real-Time untuk deteksi objek dan aplikasi
+									segmentasi gambar. Kita sering mendapatkan FPS yang lebih tinggi dengan modul DNN
+									saat menggunakan model yang telah dilatih sebelumnya menggunakan Framwork tertentu.
+									Sebagai contoh, mari kita lihat kecepatan inferensi klasifikasi gambar untuk
+									Framwork yang berbeda.Gambar 2 merupakan perbandingan waktu yang diambil pada
+									klasifikasi gambar dengan Framwork yang berbeda.
+								</p>
+								<p><img src="images/avg.png" alt="" style="max-inline-size: 100%; block-size: auto;">
+								</p>
+								<header>
+									<h3>Desain Model Sistem</h3>
+								</header>
+								<p>
+									Pada projek ini, proses pelatihan hingga pengujian model akan berjalan pada
+									Ananconda virtual environment dengan menggunakan bahasa pemrograman Python versi 3.8
+									dan OpenCV versi 4.5.5 di dalamnya, serta terinstall CUDA pada OpenCV. Program yang
+									kami buat menggunakan bahasa pemrograman Python agar mempermudah dalam
+									pengeksekusiannya. Skema proses pengujian model dapat dilihat pada gambar dibawah.
+								</p>
+								<p><img src="images/flowchart.png" alt=""
+										style="max-inline-size: 100%; block-size: auto;">
+								</p>
+								<header>
+									<h3>Implementasi Program</h3>
+								</header>
+								<p><img src="images/ss csgo.png" alt=""
+										style="max-inline-size: 100%; block-size: auto;">
+									Gambar diatas merupakan tampilan aplikasi saat object detector dijalankan. Terdapat
+									2 window yang terdapat pada layar desktop, yang pertama merupakan window command
+									prompt di mana OpenCV berjalan, menampilkan objek yang terdeteksi oleh model yang
+									ditandai dengan koordinat bounding box, dan input size dari video berupa citra frame
+									sebesar 416x416x3. Kemudian pada window yang kedua, merupakan preview dari video
+									yang sedang dideteksi oleh object detector, dimana jika object detector menangkap
+									objek yang terindikasi maka akan muncul output loop “Terdeteksi:1”. Misal objek yang
+									terdeteksi terdapat lebih dari satu maka angka akan berubah mengikuti berapa objek
+									yang teridentifikasi.Jika ada objek yang terdeteksi maka mouse akan otomatis bergeak
+									lalu menembak musuh secara otomatis.
+								</p>
+							</section>
+						</article>
+
+					</div>
+					<div class="col-4 col-12-medium">
+
+						<!-- Sidebar -->
+						<section class="box">
+							<a href="#" class="image featured"><img src="images/ss csgo.png" alt="" /></a>
+							<header>
+								<h3>CSGO Aimbot YOLOv3</h3>
+							</header>
+							<p>Tersedia di Github ku! Klik button dibawah!</p>
+							<footer>
+								<a href="https://github.com/fadhilahmadd/CSGO-Aimbot-YOLO" target="_blank"
+									class="button alt">Lihat di Github</a>
+							</footer>
+						</section>
+						<section class="box">
+							<header>
+								<h3>Projek Lain Ku</h3>
+							</header>
+							<p>Beberapa project yang telah kubuat.</p>
+							<ul class="divided">
+								<li><a href="deteksi-merokok.html">Deteksi Merokok (Realtime)</a></li>
+								<li><a href="bank-sampah.html">Website Bank Sampah</a></li>
+								<li><a href="ecom-vape.html">Website E-Commerce VapeStore (UI)</a></li>
+								<li><a href="stok-vape.html">Website Stok Barang Vape (PHP)</a></li>
+							</ul>
+							<footer>
+								<a href="https://github.com/fadhilahmadd" class="button alt">Github</a>
+							</footer>
+						</section>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- Footer -->
+		<section id="footer">
+			<div class="container">
+				<div class="row">
+					<div class="col-8 col-12-medium">
+						<section>
+							<header>
+								<h2>Sertifikat</h2>
+							</header>
+							<ul class="dates">
+								<li>
+									<span class="date">Feb 16<strong>22</strong></span>
+									<h3><a
+											href="https://drive.google.com/file/d/1XcoLQKrk9DKDiMIuTcIR_rSeDKUYakSq/view?usp=sharing">HCIA-IOT
+											Course | Huawei</a></h3>
+									<p><a
+											href="https://drive.google.com/file/d/1XcoLQKrk9DKDiMIuTcIR_rSeDKUYakSq/view?usp=sharing">Lihat
+											Sertifikat</a></p>
+								</li>
+								<li>
+									<span class="date">Aug 14<strong>22</strong></span>
+									<h3><a
+											href="https://drive.google.com/file/d/1qDaDcIiv6wwv47MUpWqkHIIH9U0KP_7P/view?usp=sharing">Database
+											Programming with PL/SQL | Oracle Academy</a></h3>
+									<p><a
+											href="https://drive.google.com/file/d/1qDaDcIiv6wwv47MUpWqkHIIH9U0KP_7P/view?usp=sharing">Lihat
+											Sertifikat</a></p>
+								</li>
+								<li>
+									<span class="date">Feb 03<strong>23</strong></span>
+									<h3><a
+											href="https://drive.google.com/file/d/1sakwNXdHw1Mtbkg6tDueCZYopMsc3amI/view?usp=sharing">Cloud
+											Practitioner Essentials (Belajar Dasar AWS Cloud) | Dicoding</a></h3>
+									<p><a
+											href="https://drive.google.com/file/d/1sakwNXdHw1Mtbkg6tDueCZYopMsc3amI/view?usp=sharing">Lihat
+											Sertifikat</a></p>
+								</li>
+								<li>
+									<span class="date">Jan 30<strong>23</strong></span>
+									<h3><a
+											href="https://drive.google.com/file/d/1DN1onrOrX8aMcraNiahsklvIB1fvaOYo/view?usp=sharing">Belajar
+											Dasar-Dasar DevOps | Dicoding</a></h3>
+									<p><a
+											href="https://drive.google.com/file/d/1DN1onrOrX8aMcraNiahsklvIB1fvaOYo/view?usp=sharing">Lihat
+											Sertifikat</a></p>
+								</li>
+								<li>
+									<span class="date">Dec 22<strong>22</strong></span>
+									<h3><a
+											href="https://drive.google.com/file/d/1zTY4SG5FtAsffIfAX2D274hCz5XuFwcJ/view?usp=sharing">Infrastruktur
+											Kecerdasan Artifisial (SIB AI-INFRA) | Bisa Artifisial Indonesia</a></h3>
+									<p><a
+											href="https://drive.google.com/file/d/1zTY4SG5FtAsffIfAX2D274hCz5XuFwcJ/view?usp=sharing">Lihat
+											Sertifikat</a></p>
+								</li>
+							</ul>
+						</section>
+					</div>
+					<div class="col-4 col-12-medium">
+						<section>
+							<header>
+								<h2>Tentangku</h2>
+							</header>
+							<a href="#" class="image featured"><img src="images/me.jpg" alt="" /></a>
+							<p>
+								Perkenalkan nama saya <strong>Fadhil Ahmad Hidayat.</strong> Saya suka explorasi pada
+								bidang IT terutama <strong>AI</strong>
+								seperti <strong>Machine Learning, Deep Learning, NLP, dan Algoritma YOLO.</strong> dan
+								tentu saja saya juga suka belajar tentang <strong>Networking.</strong>
+							</p>
+							<footer>
+								<ul class="actions">
+									<li><a href="#sosial" class="button">Temukan Saya Di Sosial Media</a></li>
+								</ul>
+							</footer>
+						</section>
+					</div>
+					<div id="sosial" class="col-4 col-6-medium col-12-small">
+						<header>
+							<h2>Sosial Media</h2>
+						</header>
+						<ul class="social">
+							<li><a class="icon brands fa-twitter" href="https://twitter.com/fadhil_ahmadd"
+									target="_blank"><span class="label">Twitter</span></a></li>
+							<li><a class="icon brands fa-instagram" href="https://www.instagram.com/fadhil_ahmad_h/"
+									target="_blank"><span class="label">Instagram</span></a></li>
+							<li><a class="icon brands fa-whatsapp" href="https://wa.me/6289674603697"
+									target="_blank"><span class="label">WhatsApp</span></a></li>
+							<li><a class="icon brands fa-linkedin-in" href="linkedin.com/in/fadhil-ahmad-604623139"
+									target="_blank"><span class="label">LinkedIn</span></a></li>
+							<li><a class="icon brands fa-github" href="https://github.com/fadhilahmadd"
+									target="_blank"><span class="label">Github</span></a></li>
+						</ul>
+					</div>
+					<div class="col-4 col-6-medium col-12-small">
+						<header>
+							<h2>Contact</h2>
+						</header>
+						<ul class="contact">
+							<li>
+								<h3>Alamat</h3>
+								<p>
+									Sambek,<br />
+									Wonosobo, 56312,<br />
+									Jawa Tengah, Indonesia
+								</p>
+							</li>
+							<li>
+								<h3>Email</h3>
+								<p><a href="mailto:fadhilhidayat27@gmail.com">fadhilhidayat27@gmail.com</a></p>
+							</li>
+							<li>
+								<h3>No Hp</h3>
+								<p><a href="https://wa.me/6289674603697" target="_blank">(+62) 89674603697</a></p>
+							</li>
+						</ul>
+					</div>
+					<div class="col-4 col-12-medium">
+						<section>
+							<header>
+								<h2>Riwayat</h2>
+							</header>
+							<ul>
+								<h3>
+									SMK Negeri 1 Wonosobo
+								</h3>
+								<p>2017 - 2020</p>
+							</ul>
+							<ul>
+								<h3>
+									Politeknik Harapan Bersama Tegal
+								</h3>
+								<p>2020 - Sekarang</p>
+							</ul>
+						</section>
+					</div>
+					<div class="col-12">
+
+						<!-- Copyright -->
+						<div id="copyright">
+							<ul class="links">
+								<li>&copy; Fadhil. All rights reserved.</li>
+								<li>Keep Smile and Have Fun</li>
+							</ul>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+
+	</div>
+
+	<!-- Scripts -->
+	<script src="assets/js/jquery.min.js"></script>
+	<script src="assets/js/jquery.dropotron.min.js"></script>
+	<script src="assets/js/browser.min.js"></script>
+	<script src="assets/js/breakpoints.min.js"></script>
+	<script src="assets/js/util.js"></script>
+	<script src="assets/js/main.js"></script>
+
+</body>
+
+</html>
